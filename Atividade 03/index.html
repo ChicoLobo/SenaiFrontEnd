@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Formulario </title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <center>
+    <h2>Página de Formulário - Atividade 3</h2>
+    <h6>Os campos com  * são de preenchimento obrigatório.</h6>
+
+    <form action="pagina/login.html" method="GET">
+
+        <fieldset>
+
+            <legend>Dados Pessoais</legend>
+
+            <label for="nome">Nome Completo * </label>
+                <input type="text" name="nome" id="nomeCompleto" required minlength="2" maxlength="100"/>
+            <br/>
+
+            <label for="email">Email * </label>
+                <input type="email" name="email" id="email" required pattern="(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.+-]+\.[a-zA-Z0-9_.]+$)"/>
+            <br/>
+
+            <label> Celular *</label>
+                <input type="number" name="celular" required />
+            <br/>
+            
+            <label> Endereço </label>
+                <input type="text" name="endereco"  />
+            <br/>
+
+            <label> CEP </label>
+                <input type="text" name="cep"  maxlength="8" />
+            <br/>
+
+            <label> Data de Nascimento </label>
+                <input type="date" name="dataNascimento" max="2014-02-06" />
+            <br/>
+
+        </fieldset>
+        <fieldset>
+
+            <legend>Dados Escolares</legend>
+            
+            <label> Nome do Curso 1 * </label>
+                <input type="text" name="NomeCurso1" required />
+            <br/>
+          
+            <label> Carga Horária * </label>
+                <input type="number" name="HorasCurso1"  required/>
+            <br/>
+
+            <label> Mês/Ano de conclusão * </label>
+                <input type="month" name="DataConclusaoCurso1" min="2015-02" required />
+            <br/>
+            <br/>
+            <br/>
+            <hr/>
+            <br/>
+
+            <label> Nome do Curso 2 * </label>
+                <input type="text" name="NomeCurso2" required/>
+            <br/>
+          
+            <label> Carga Horária * </label>
+                <input type="number" name="HorasCurso2" required/>
+            <br/>
+
+            <label> Mês/Ano de conclusão * </label>
+                <input type="month" name="DataConclusaoCurso2" min="2015-02" required />
+            <br/>
+            <br/>
+            <br/>
+            <hr/>
+            <br/>
+
+            <label> Nome do Curso 3 * </label>
+                <input type="text" name="NomeCurso3" required />
+            <br/>
+          
+            <label> Carga Horária * </label>
+                <input type="number" name="HorasCurso3" required/>
+            <br/>
+
+            <label> Mês/Ano de conclusão * </label>
+                <input type="month" name="DataConclusaoCurso3" min="2015-02" required/>
+            <br/>
+            
+        </fieldset>
+    
+        <fieldset>
+
+            <legend>Dados Profissionais</legend>
+
+            <label>Nome da Empresa 1 * </label>
+                <input type="text" name="NomeEmpresa1" required/>
+            <br/>
+            
+            <label>Atual? *</label>
+                <select name="TrabalhaAtualmente1" required>
+                    <option value="nao">Não</option>
+                    <option value="sim" selected >Sim</option>
+                </select>
+            <br/>    
+            
+            <label>Tempo de trabalho * </label>
+                <input type="text" name="TempoTrabalhado1" required>
+            <br/>    
+            
+            <label>Cargo </label>
+                <input type="text" name="Cargo1" />
+            <br/>
+            
+            <label>Descrição das atividades </label>
+            <textarea name="DescricaoExperiencia1" id="" cols="30" rows="10"></textarea>
+            <br/>
+            <br/>
+            <br/>
+            <hr/>
+            <br/>
+
+            <label>Nome da Empresa 2 * </label>
+                <input type="text" name="NomeEmpresa2" required/>
+            <br/>
+            
+            <label>Atual? *</label>
+                <select name="TrabalhaAtualmente2" required>
+                    <option value="nao">Não</option>
+                    <option value="sim" selected >Sim</option>
+                </select>
+            <br/>    
+            
+            <label>Tempo de trabalho * </label>
+                <input type="text" name="TempoTrabalhado2" required>
+            <br/>    
+            
+            <label>Cargo </label>
+                <input type="text" name="Cargo2" />
+            <br/>
+            
+            <label>Descrição das atividades </label>
+            <textarea name="DescricaoExperiencia2" id="" cols="30" rows="10"></textarea>
+            <br/>
+            <br/>
+            <br/>
+            <hr/>
+            <br/>
+
+            <label>Nome da Empresa 3 * </label>
+                <input type="text" name="NomeEmpresa3" required/>
+            <br/>
+            
+            <label>Atual? *</label>
+                <select name="TrabalhaAtualmente3" required>
+                    <option value="nao">Não</option>
+                    <option value="sim" selected >Sim</option>
+                </select>
+            <br/>    
+            
+            <label>Tempo de trabalho * </label>
+                <input type="text" name="TempoTrabalhado3" required>
+            <br/>    
+            
+            <label>Cargo </label>
+                <input type="text" name="Cargo3" />
+            <br/>
+            
+            <label>Descrição das atividades </label>
+            <textarea name="DescricaoExperiencia3" id="" cols="30" rows="10"></textarea>
+        </fieldset>
+
+
+        <label for="checkbox" id="checkboxLabel">
+        <input type="checkbox" id="checkbox" required/>
+        Autorizo o uso dos meus dados.</label>
+        <br/>
+        <button>Salvar</button>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <hr/>
+
+    </form>
+</center>
+</body>
+
+</html>

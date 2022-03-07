@@ -1,0 +1,58 @@
+.horizontal {
+ width: 150px;
+ height: 150px;
+ margin: 10px;
+ background: linear-gradient(90deg, rgb(15, 15, 199), rgb(228, 135, 151));
+ animation-name:anima1;
+ animation-duration: 10s;
+ animation-delay: 2s;
+ animation-iteration-count: infinite;
+ position: relative;
+}
+
+.vertical {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    background: linear-gradient(180deg, rgb(15, 199, 55), rgb(197, 50, 226));
+    animation-name:anima2;
+    animation-duration: 10s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+.clicar{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(117, 17, 211);
+    box-shadow: 10px 10px 5px rgb(85, 31, 156);
+}
+
+.clicar:active{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(117, 17, 211);
+    border-radius: 100px;
+    box-shadow: 10px 10px 5px rgb(85, 31, 156);
+} 
+.container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+@keyframes anima1 {
+    0% {left: 0px;}
+    50% { left: 410px;}
+    100% {left: 0px;}
+}
+
+@keyframes anima2 {
+    0% {bottom: 0px;}
+    50% {bottom: 392px;}
+    100% {bottom: 0px;}
+}
+h1{
+    color: rgb(209, 216, 223);
+    text-align: center;
+}
