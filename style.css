@@ -1,0 +1,38 @@
+body{
+    background-color: #123d58;
+}
+
+div{
+background-image: url("banner.png"); 
+width: 90%;
+height: 415px;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40pt;
+    padding-top: 100px;
+    color: #FE5F00;
+}
+h4 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25pt;
+    padding-top: 50px;
+    color: #2F97C1;
+}
+p, ul{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15pt;
+    color: #C4F1BE;
+}
+
+a{
+    color: #D81E5B;
+    font-size: 18pt;
+    margin-bottom: 25px;
+}
+
+a:hover{
+    font-size: 30pt;
+    color: #ECF39E;
+}
