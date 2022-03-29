@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Desafio</title>
+</head>
+<body>
+    <div class="questao">
+        <h1> Calculando a quantidade de combustível gasto na viagem</h1>
+        <label for="tempoGasto"> Quanto tempo foi gasto na viagem em HORAS? </label><br>
+        <input type="text" id="tempoGasto"/><br>
+
+        <label for="mediaVelocidade"> Qual foi a velocidade média da viagem? (km/h)  </label><br>
+        <input type="text" id="mediaVelocidade"/><br>
+
+        <input type="button" value="Calcular" onclick="calcular()" /><br>
+
+
+        <p id="resultado">Resultado:<br></p>
+    </div>
+    <script>
+        function calcular() {
+            let consumoVeiculo = 12;
+            let tempoGasto = document.getElementById('tempoGasto').value;
+            let mediaVelocidade = document.getElementById('mediaVelocidade').value;
+            let distanciaPercorrida = tempoGasto*mediaVelocidade;
+            
+            let combustivelGasto = distanciaPercorrida/consumoVeiculo;
+           
+            let exibeResultado = `Resultado: <br> Foram percorridos ${distanciaPercorrida} kms <br> E foram consumidos ${combustivelGasto.toFixed(3)} litros de gasolina.` ;
+            document.getElementById('resultado').innerHTML = exibeResultado;
+        }
+
+    </script>
+</body>
+</html>
+
+
