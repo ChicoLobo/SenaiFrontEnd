@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <button onclick="exemploAjax()">Carregar as regiões!</button>
+    <button >Carregar as regiões!</button>
     <script>
         function exemploAjax() {
             let xhttp = new XMLHttpRequest();
@@ -68,7 +68,10 @@
                 document.getElementById("ls-regiao").innerHTML = option;
             }
             xhttp.send();
+            carregarListaUf("");
+
         }
+
         function carregarMunicipio(UF){
             let xhttp = new XMLHttpRequest();
             xhttp.open("GET", `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${UF}/municipios?orderBy=nome`);
@@ -95,7 +98,7 @@
         </div>
         <div class="form-group col-sm-3">
             <label for="ls-uf">UF:</label>
-            <select class="form-control" name="ls-uf" id="ls-uf" onchange="carregarMunicipio(this.value)">
+            <select class="form-control" name="ls-uf" id="ls-uf"  onchange="carregarMunicipio(this.value)">
                 <option value=""></option>
             </select>
         </div>
