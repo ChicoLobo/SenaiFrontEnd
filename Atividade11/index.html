@@ -199,15 +199,14 @@
                 delete paciente.id;
                 listaPacientes.push(paciente);
                 alert("Salvo com Sucesso!");
-                // location.reload();
+                
             }
             else {
                 let id = paciente.id;
                 delete paciente.id;
                 listaPacientes[id] = paciente;
-                // console.log(idPaciente)
-                // alert("Atualizado com Sucesso!");
-                // location.reload();
+                alert("Atualizado com Sucesso!");
+                
             }
             // set salva o item no localStorage
             //JSON.stringify(listaPacientes) converte de objeto para string 
