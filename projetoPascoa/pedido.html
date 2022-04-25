@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Pedido</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="orange accent-2">
+  <nav class="orange accent-2  col s12 light flow-text" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo flow-text" >Dona Chiquinha</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Cardápio</a></li>
+        <li><a href="#">Faça seu Pedido</a></li>
+        <li><a href="#modal" class="btn brown darken-1 modal-trigger" onclick="mostrarPedido()"> <i class="material-icons">shopping_cart</i></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h1 class="header col s12">Pedido</h1>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="img/bannerPedidos.jpg"" alt="Unsplashed background img 3"></div>
+  </div>
+     
+  <div class="container">
+    <h4> Escolha seu Pedido</h4>
+    <div class="row center">
+        <a data-target="modal" id="button" class="btn-large modal-trigger waves-effect waves-light orange darken-2 z-depth-3" onclick="mostrarPedido()"> <i class="material-icons right ">add_shopping_cart</i> Finalizar Pedido</a>
+    </div>
+        <div class="row lista">
+            <div class="col s12 m6 produto">
+                <div class="titulo orange lighten-5">Produto XX</div>
+                <img src="img/01.webp" alt="">
+                <div class="descricao orange lighten-4 light">Descrição do Produto</div>
+                <div class="valor brown lighten-1 grey-text text-lighten-2"> R$ 100,00</div>
+                <div class="bt menos orange darken-4">-</div>
+                <div class="qt grey lighten-4">0</div>
+                <div class="bt mais green accent-3">+</div>
+            </div>        
+        </div>
+        <div class="row center">
+            <a data-target="modal" id="button" class="btn-large modal-trigger waves-effect waves-light orange darken-2 z-depth-3" onclick="mostrarPedido()"> <i class="material-icons right ">add_shopping_cart</i> Finalizar Pedido</a>
+        </div>
+        
+  </div>
+  
+  <footer class="page-footer brown darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 l12">
+          <h5 class="center flow-text">Fale Conosco</h5>
+          <p class="white-text flow-text light"> Para falar conosco basta acessar o botão abaixo, atendimento 24 hrs.</p>
+          <div class="row center">
+            <a href="#" id="button" class="btn-large waves-effect waves-light orange darken-2 z-depth-3"> <i class="material-icons right ">whatsapp</i> Entar em contato</a>
+       
+          </div>
+          <br><br>
+        </div>
+      </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3">Rodolfo Rodrigues</a>
+      </div>
+    </div>
+  </footer>
+ 
+  <div class="modal modal-fixed-footer " id="modal">
+      <div class="modal-content orange lighten-1 "> 
+        <div class="row">
+            <h4>Seu Pedido</h4>
+            <div class="col s12 l6">
+            <input type="text" name="" id="nome" class="form-control" placeholder="Nome">
+            </div>
+            <div class="col s12 l6">
+                <input type="text" name="" id="endereco" class="form-control" placeholder="Endereço">
+
+            </div>
+        </div>
+        
+      </div>
+      <div class="modal-footer"> 
+        <button type="button" onclick="enviar()" class="btn btn-default blue" disabled id="btEnviar">Enviar</button>
+        <a class="btn modal-close modal-action red accent-2" >Sair</a>
+      </div>
+
+  </div>
+  
+  
+
+
+
+
+  <!--  Scripts-->
+  <script>
+      function ativarModal(){
+        $(document).ready(function(){
+        $('.modal').modal();
+        });
+      }
+
+      listaProdutos = [];
+      function carregarListaprodutos(){
+        let ajax = new XMLHttpRequest();
+        ajax.open("GET", "js/produtos.json");
+        ajax.send();
+        ajax.onload = function () {
+        lista = JSON.parse(this.response);
+        listarProdutos();
+        }
+      }
+      function listarProdutos() {
+        let i = 0;
+        for (const p of lista) {
+            let id = i;
+            let produto = document.querySelector(".produto").cloneNode(true);
+            produto.querySelector(".titulo").innerHTML = p.nome.toUpperCase();
+            produto.querySelector("img").src = `img/${p.img}`;
+            produto.querySelector(".valor").innerHTML = `R$ ${p.valor}`;
+            produto.querySelector(".descricao").innerHTML = p.descricao;
+            produto.querySelector(".qt").innerHTML = p.qt;
+
+            produto.querySelector(".menos").addEventListener("click", function () { alterarQt(id, -1) });
+            produto.querySelector(".mais").addEventListener("click", function () { alterarQt(id, 1) });
+
+            document.querySelector(".lista").append(produto);
+            i++;
+        }
+        document.querySelector(".produto").remove();
+    }
+    function alterarQt(id, qt) {
+        let p = lista[id];
+        p.qt += qt;
+        if (p.qt < 0) p.qt = 0;
+        document.getElementsByClassName("qt")[id].innerHTML = p.qt;
+    }
+    let msgModal = "";
+
+    function mostrarPedido() {
+        ativarModal(); 
+        msgModal = "";
+        let subTotal = 0;
+        let total = 0;
+        for (const produto of lista) {
+            if (produto.qt > 0) {
+                subTotal = (produto.valor * produto.qt).toFixed(2);
+                total += +subTotal;
+                msgModal += `<p>${produto.nome.toUpperCase()} (R$ ${produto.valor} x ${produto.qt}) = ${subTotal}</p>`;
+            }
+        }
+        if (msgModal == "") {
+            msgModal = "<p>Nenhum produto selecionado.</p>";
+            document.querySelector("#btEnviar").disabled = "disabled";
+        } else {
+            msgModal += `<b>Total ${total.toFixed(2)}</b>`
+            document.querySelector("#btEnviar").disabled = "";
+        }
+        document.querySelector(".modal-content").innerHTML = msgModal;
+}
+function enviar() {
+    let fone = '5561992783606';
+    msgModal = msgModal.replaceAll("<p>", "").replaceAll("</p>", "\n");
+    msgModal = msgModal.replaceAll("<b>", "*").replaceAll("</b>", "*");
+    let nome = document.querySelector("#nome").value;
+    let endereco = document.querySelector("#endereco").value;
+    msgModal += `\nNome: *${nome}*`;
+    msgModal += `\nEnderço: *${endereco}*`;
+    msgModal = encodeURI(msgModal);
+
+    link = `https://api.whatsapp.com/send?phone=${fone}&text=${msgModal}`;
+    window.open(link, '_blanck')
+}
+    
+    carregarListaprodutos();
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+
+  </body>
+</html>
