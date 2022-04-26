@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
 .produto {
     /* background-color: aqua; */
@@ -57,3 +59,30 @@
     font-weight: 600;
     
 }
+
+#subtitulo{
+    font-weight: 500;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+#paragrafo{
+        font-size: 14pt;
+        font-weight: 600;
+}
+
+#titulo{
+    font-size: 18pt;
+    font-weight: bold;
+
+}
+#logo-container{
+    font-family: 'Cookie', cursive;
+    font-size: 20pt;
+}
+

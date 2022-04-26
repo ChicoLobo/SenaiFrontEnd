@@ -71,7 +71,7 @@
           <h5 class="center flow-text">Fale Conosco</h5>
           <p class="white-text flow-text light"> Para falar conosco basta acessar o botão abaixo, atendimento 24 hrs.</p>
           <div class="row center">
-            <a href="#" id="button" class="btn-large waves-effect waves-light orange darken-2 z-depth-3"> <i class="material-icons right ">whatsapp</i> Entar em contato</a>
+            <a href="https://api.whatsapp.com/send?phone=5561992783606&text=Ol%C3%A1%20quero%20fazer%20um%20or%C3%A7amento." id="button" class="btn-large waves-effect waves-light orange darken-2 z-depth-3"> <i class="material-icons right ">whatsapp</i> Entar em contato</a>
        
           </div>
           <br><br>
@@ -84,20 +84,24 @@
     </div>
   </footer>
  
-  <div class="modal modal-fixed-footer " id="modal">
+  <div class="modal modal-fixed-footer" id="modal">
       <div class="modal-content orange lighten-1 "> 
         <div class="row">
             <h4>Seu Pedido</h4>
+            
             <div class="col s12 l6">
-            <input type="text" name="" id="nome" class="form-control" placeholder="Nome">
+                <input type="text" name="" id="nome" class="form-control" placeholder="Nome">
             </div>
+            
             <div class="col s12 l6">
                 <input type="text" name="" id="endereco" class="form-control" placeholder="Endereço">
-
             </div>
-        </div>
+
+            <div class="row" id="detalhesPedido">   
+            </div>
         
-      </div>
+        </div>
+    </div>
       <div class="modal-footer"> 
         <button type="button" onclick="enviar()" class="btn btn-default blue" disabled id="btEnviar">Enviar</button>
         <a class="btn modal-close modal-action red accent-2" >Sair</a>
@@ -174,7 +178,7 @@
             msgModal += `<b>Total ${total.toFixed(2)}</b>`
             document.querySelector("#btEnviar").disabled = "";
         }
-        document.querySelector(".modal-content").innerHTML = msgModal;
+        document.querySelector("#detalhesPedido").innerHTML = msgModal;
 }
 function enviar() {
     let fone = '5561992783606';
