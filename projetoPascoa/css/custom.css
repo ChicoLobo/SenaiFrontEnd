@@ -99,7 +99,7 @@ body{
     font-size: 20pt;
 }
 #tituloProduto, #valorProduto{
-    font-size: 14pt;
+    font-size: 11pt;
     font-weight: bold;
 }
 
@@ -127,3 +127,7 @@ textarea:-moz-placeholder {
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
+#tituloProduto{
+    overflow-wrap: break-word;
+}
+    
