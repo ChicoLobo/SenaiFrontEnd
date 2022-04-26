@@ -67,6 +67,11 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bolder;
 }
+#subtituloPedido{
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
 
 body{
     font-family: 'Roboto', sans-serif;
@@ -93,9 +98,32 @@ body{
     font-family: 'Cookie', cursive;
     font-size: 20pt;
 }
-
+#tituloProduto, #valorProduto{
+    font-size: 14pt;
+    font-weight: bold;
+}
 
 button{
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+#formModal{
+    background-color: #fff3e0;
+    
+}
+::-webkit-input-placeholder  { 
+    color: black;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+ }
+input:-moz-placeholder { 
+    color: black;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+textarea:-moz-placeholder { 
+    color: black;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
